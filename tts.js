@@ -336,4 +336,3 @@ function pausedResume() {
     nextButton.onclick = resolve;
   });
 }
-
