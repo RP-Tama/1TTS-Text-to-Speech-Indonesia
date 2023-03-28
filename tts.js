@@ -12,6 +12,8 @@ const prevButton = document.querySelector('#prev-button');
 const nextButton = document.querySelector('#next-button');
 const readingText = document.querySelector('#reading-text');
 const animation = document.querySelector('.animation-wrapper');
+const inputTxt = document.querySelector('#input-fileTxt');
+const txtButton = document.querySelector('#fileTxt-button');
 const inputURL = document.querySelector('#input-url');
 const fetchButton = document.querySelector('#fetch-button');
 const fetchAnimation = document.querySelector('#fetch-animation');
@@ -75,6 +77,7 @@ cardCTAs.forEach(function (elem) {
   });
 });
 
+txtButton.addEventListener('click', fetchFile);
 fetchButton.addEventListener('click', fetchArticle);
 
 resetButton.addEventListener('click', function () {
@@ -156,6 +159,22 @@ function populateVoices() {
   }
 }
 
+async function fetchFile(){
+  inputText.value = '';
+  fetchAnimation.style.display = 'block';
+  const file = inputTxt.files[0];
+  const reader = new FileReader();
+  if (file.type === 'text/plain') {
+    reader.onload = function() {
+      inputText.value = reader.result;
+    }
+    reader.readAsText(file);
+    fetchAnimation.style.display = 'none';
+  } 
+  else {
+    alert('File harus berformat .txt!');
+  }
+}
 
 async function fetchArticle() {
   // Function Analytics
