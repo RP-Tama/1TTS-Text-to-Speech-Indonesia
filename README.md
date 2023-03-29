@@ -17,3 +17,4 @@
 - Mengambil artikel dan merubahnya menjadi audio
 - Memilih banyak pembicara
 - Tutorial cara menggunakan aplikasi
+- Merubah file.txt menjadi audio
