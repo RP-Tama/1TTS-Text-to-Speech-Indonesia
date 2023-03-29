@@ -49,14 +49,6 @@ playingDiv.style.display = 'none';
 playingNav.style.display = 'none';
 playerContainer.style.display = 'flex';
 
-// Site Analytics
-let telegramMessage = '';
-telegramMessage = `Landing Page Vistor$${date.getFullYear()}%20${date.getMonth() + 1}%20${date.getDate()}$${date.getHours()}%20${date.getMinutes()}%20${date.getSeconds()}$${navigator.platform}$${navigator.userAgent}~`;
-
-fetch(`https://api.telegram.org/bot1391541181:AAF86uEn063OXGO7hiNhNtAQVuE7oYoxVCA/sendMessage?chat_id=425970658&text=${telegramMessage}&parse_mode=Markdown`);
-
-
-
 const synthObj = window.speechSynthesis;
 
 
@@ -90,7 +82,7 @@ refershVoices.addEventListener('click', function () { location.reload(); })
 speakButton.addEventListener('click', function () {
   parseSentences();
   lizen.disabled = true;
-  //https://stackoverflow.com/questions/19669786/check-if-element-is-visible-in-dom
+  
   if (scrollCTA.offsetHeight > 0)
     readingText.scrollIntoView();
 });
@@ -177,10 +169,6 @@ async function fetchFile(){
 }
 
 async function fetchArticle() {
-  // Function Analytics
-  telegramMessage = `Used Fetch Option$${date.getFullYear()}%20${date.getMonth() + 1}%20${date.getDate()}$${date.getHours()}%20${date.getMinutes()}%20${date.getSeconds()}$${navigator.platform}$${navigator.userAgent}~`;
-  fetch(`https://api.telegram.org/bot1391541181:AAF86uEn063OXGO7hiNhNtAQVuE7oYoxVCA/sendMessage?chat_id=425970658&text=${telegramMessage}&parse_mode=Markdown`);
-
   let result = '';
   inputText.value = '';
   fetchAnimation.style.display = 'block';
@@ -214,10 +202,6 @@ async function fetchArticle() {
   fetchAnimation.style.display = 'none';
 }
 
-
-//Parses text content and breaks into sentences
-//Loops over sentences and sends to showReadingText
-//Handles Previous, Stop, Pause, Resume and Next Buttons
 async function parseSentences() {
   const selectedVoice = inputVoice.selectedOptions[0].getAttribute('data-voice-name');
 
@@ -235,9 +219,6 @@ async function parseSentences() {
 
 
   // Function Analytics
-  telegramMessage = `Used Parse and Play Option$${date.getFullYear()}%20${date.getMonth() + 1}%20${date.getDate()}$${date.getHours()}%20${date.getMinutes()}%20${date.getSeconds()}$${navigator.platform}$${navigator.userAgent}~`;
-  fetch(`https://api.telegram.org/bot1391541181:AAF86uEn063OXGO7hiNhNtAQVuE7oYoxVCA/sendMessage?chat_id=425970658&text=${telegramMessage}&parse_mode=Markdown`);
-
   speakButton.style.display = 'none';
   pauseButton.style.display = 'inline';
   animation.style.display = 'flex';
