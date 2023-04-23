@@ -10,7 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+    - name: Install dependencies
+      run: npm ci
     - name: Pull changes from A
       run: git pull https://github.com/RP-Tama/1TTS-Teknologi-Multimedia-.git main
     - name: Push changes to B
