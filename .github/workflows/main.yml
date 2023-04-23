@@ -1,0 +1,21 @@
+   name: Sync A to B
+   
+   on:
+     push:
+       branches:
+         - main
+   
+   jobs:
+     sync:
+       runs-on: ubuntu-latest
+   
+       steps:
+       - uses: actions/checkout@v2
+       - name: Pull changes from A
+         run: git pull https://github.com/RP-Tama/1TTS-Teknologi-Multimedia-.git main
+       - name: Push changes to B
+         run: |
+           git config --global user.name "GitHub Action"
+           git config --global user.email "action@github.com"
+           git remote add b https://github.com/Koro129/tes1.git
+           git push b HEAD:main
