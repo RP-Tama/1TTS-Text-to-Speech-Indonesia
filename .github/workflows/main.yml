@@ -13,7 +13,7 @@ jobs:
     - name: Checkout Repo A
       uses: actions/checkout@v2
       with:
-        repository: https://github.com/RP-Tama/1TTS-Teknologi-Multimedia-.git
+        repository: RP-Tama/1TTS-Teknologi-Multimedia-
     
     - name: Pull changes from Repo A
       run: git pull
@@ -21,7 +21,7 @@ jobs:
     - name: Checkout Repo B
       uses: actions/checkout@v2
       with:
-        repository: https://github.com/Koro129/tes1.git
+        repository: Koro129/tes1
 
     - name: Push changes to Repo B
       run: git push
