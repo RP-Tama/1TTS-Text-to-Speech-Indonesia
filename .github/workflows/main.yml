@@ -13,7 +13,7 @@ jobs:
     - name: Checkout Repo A
       uses: actions/checkout@v2
       with:
-        repository: RP-Tama/1TTS-Teknologi-Multimedia-
+        repository: RP-Tama/1TTS-Text-to-Speech-Indonesia
     
     - name: Pull changes from Repo A
       run: git pull
