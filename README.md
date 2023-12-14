@@ -1,4 +1,4 @@
-# 1TTS-Teknologi-Multimedia-
+# 1TTS-Text To Speech Indonesia
 1TTS Text To Speech
 
 ## Teknologi Multimedia A - Kelompok 1
